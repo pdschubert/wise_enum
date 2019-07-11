@@ -6,7 +6,8 @@ option(BUILD_EXAMPLES "Build the examples" OFF)
 option(BUILD_TESTS "Build the tests" OFF)
 option(NO_EXCEPTIONS "Build without exceptions" OFF)
 
-file(GLOB interface_hdrs RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "*.h")
+file(GLOB interface_hdrs RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/include/wise_enum" "*.h")
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/wise_enum)
 set_property(SOURCE ${interface_hdrs} PROPERTY HEADER_FILE_ONLY ON)
 
 add_library(wise_enum INTERFACE)
